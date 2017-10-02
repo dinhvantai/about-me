@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DT Introduction</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <div class="intro" id="intro">
+            <div id="particles-js"><canvas class="particles-js-canvas-el" width="1232" height="945" style="width: 100%; height: 100%;"></canvas></div>
+            <div class="intro-content">
+                <div class="profile" onclick="showProd()">
+                    <span class="image"></span>
+                </div>
+                <h1 onclick="showProd()"><span>Tai Dinh </span><span>Web Developer</span></h1>
+                <div class="social-links">
+                    <a class="social-icon" target="_blank" href="https://www.facebook.com/dinhtai.bkhn">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+                    <a class="social-icon" target="_blank" href="https://github.com/dinhvantai">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/tai-dinh-van-926206149/">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product" id="product">
+            <div class="pro-content">
+                <h1>Keep it simple!</h1>
+                <section>
+                    <div class="title">
+                        ■ <span>Project Medicine</span>
+                    </div>
+                    <div class="content">
+                        Project with Laravel Framwork
+                        <div class="links">
+                            <a href="https://github.com/dinhvantai/medicine_shop">Source</a>
+                            <a href="https://medicine.dinhtai.com">Demo</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <span id="top-btn" class="hidden" onclick="showBasic()">
+        <i aria-hidden="true" class="fa fa-arrow-up"></i>
+    </span>
+
+    <!-- jQuery Lib -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <!-- Particles JS -->
+    <script src="js/particles.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+        function showProd() {
+            $('html,body').animate({scrollTop: $("#product").offset().top}, 'slow');
+            $('#top-btn').toggleClass('hidden');
+        }
+        function showBasic() {
+            $('html,body').animate({scrollTop: 0}, 'slow');
+            $('#top-btn').toggleClass('hidden');
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            const scrolltop = $(window).scrollTop();
+            if (scrolltop) {
+                $('#top-btn').removeClass('hidden');
+            } else {
+                $('#top-btn').addClass('hidden');
+            }
+        })
+    </script>
+</body>
+</html>
